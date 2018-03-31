@@ -1,0 +1,26 @@
+.landingContainerBody {
+  width: 100%;
+  height: 500px;
+}
+
+.shopTitle {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Snell Roundhand';
+  margin-top: 20px;
+}
+
+.shape {
+  width: 330px;
+  height: 380px;
+  background-color: grey;
+  display: inline-block;
+}
+
+.titleCard {
+  width: 1319px;
+  height: 80px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.34);
+  color: white;
+  margin: 0 auto;
+}

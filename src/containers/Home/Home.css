@@ -1,0 +1,60 @@
+
+.Header {
+  height: 25%;
+  width: 100%;
+}
+
+    .text1 {
+      text-align: center;
+      font-family: 'Shree Devanagari 714';
+      margin-bottom: 0px;
+      font-size: 18px;
+    }
+
+.moveSpacing1 {
+  margin-top: 20px;
+}
+
+.body {
+  width: 100%;
+  max-height: 100%;
+}
+
+.contactusContainer {
+  width: 100%;
+  height: 246px;
+}
+
+.cuButton {
+  width: 239px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 3px 31px 0 rgba(89, 22, 99, 0.44);
+  top: 25px;
+  position: relative;
+}
+
+h1 {
+  color: #281560;
+  text-align: center;
+  font-family: 'Snell Roundhand';
+  position: relative;
+  top: 3px;
+}
+
+.line {
+ border-top: 1px solid #281560;
+ width: 819px;
+ height: 0px;
+ z-index: 1;
+ margin: 0 auto;
+ margin-top: 108px;
+}
+
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
