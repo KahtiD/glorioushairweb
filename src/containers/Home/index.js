@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
-import {Footer, HorizCarousel, AboutUs, Menu, HomepageStyle, Header } from '../../components';
+import {Footer, HorizCarousel, AboutUs, Menu, HomepageStyle} from '../../components';
 import {Link} from 'react-router-dom';
 
 export class Home extends Component {

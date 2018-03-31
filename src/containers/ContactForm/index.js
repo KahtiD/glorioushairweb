@@ -75,7 +75,7 @@ validateForm = () => {
 
 };
 
-  async handleSubmit(e) {
+handleSubmit(e) {
 
       e.preventDefault();
 
@@ -116,6 +116,7 @@ validateForm = () => {
         subject: this.state.subject,
         message: this.state.message,
       };
+      console.log(finalForm);
 
       if (this.state.imagePreviewUrl) {
 
@@ -127,9 +128,6 @@ validateForm = () => {
           encoding: 'base64',
         }]
      }
-
-
-    const contactus = await axios.post('http://localhost:3001/api/contactus', {finalForm}, )
 
       this.handleFormClear(e);
       this.setState({
