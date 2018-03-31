@@ -4,3 +4,4 @@ export {AboutUs} from './AboutUs';
 export {Menu} from './Menu';
 export {HomepageStyle} from './HomepageStyle';
 export {Header} from './Header';
+export {SLSections} from './shopLandingSections';

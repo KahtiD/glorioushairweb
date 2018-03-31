@@ -1,6 +1,6 @@
 .landingContainerBody {
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 
 .shopTitle {
@@ -17,10 +17,46 @@
   display: inline-block;
 }
 
+.shapePressed {
+  width: 330px;
+  height: 380px;
+  background-color: grey;
+  display: inline-block;
+  box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 1);
+}
+
 .titleCard {
   width: 1319px;
   height: 80px;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.34);
   color: white;
   margin: 0 auto;
+}
+
+.defaultL {
+  width: 330px;
+  display: inline-block;
+  float: left;
+  padding-left: 84.5px;
+  padding-right: 80px;
+  margin-top: 9px;
+  cursor: pointer;
+}
+
+.defaultR {
+  width: 330px;
+  display: inline-block;
+  float: right;
+  padding-right: 84.5px;
+  padding-left: 80px;
+  margin-top: 9px;
+  cursor: pointer;
+}
+
+.defaultC {
+  width: 330px;
+  display: inline-block;,
+  margin: 0 auto;
+  margin-top: 9px;
+  cursor: pointer;
 }
