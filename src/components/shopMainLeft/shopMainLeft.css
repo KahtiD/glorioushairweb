@@ -1,0 +1,50 @@
+.mainLeftContainer {
+  width: 45%;
+  height: 1208px;
+  border: 1px solid red;
+  margin-right: 60px;
+  float: left;
+}
+
+.verticalCarousel{
+  width: 100%;
+  height: 970px;
+  margin-top: 65px;
+}
+
+.backCanvas{
+  width: 381px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.frontCanvas{
+  width: 44%;
+  height: 457px;
+  z-index: 1;
+  background-color: white;
+  position: absolute;
+  margin-top: 226px;
+}
+
+.topButton {
+  transform: rotate(90deg);
+  display: inline-block;
+  float: left;
+  margin-left: 70px;
+}
+
+.downButton {
+  transform: rotate(90deg);
+  display: inline-block;
+  float: right;
+  margin-right: 70px;
+}
+
+.socialsTitle{
+  font-size: 30px;
+  color: #4C4C4C;
+  font-family: 'Shree Devanagari 714';
+  display: inline-block;
+}

@@ -5,3 +5,8 @@ export {Menu} from './Menu';
 export {HomepageStyle} from './HomepageStyle';
 export {Header} from './Header';
 export {SLSections} from './shopLandingSections';
+export {MainLeft} from './shopMainLeft';
+export {MainRight} from './shopMainRight';
+export {LaceSelectorButtons} from './laceSelectorButtons';
+export {LengthSelectorButtons} from './lengthSelectors';
+export {ReviewsShopPage} from './reviewsShopPage';

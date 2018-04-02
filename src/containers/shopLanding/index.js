@@ -47,14 +47,14 @@ render() {
       <Header></Header>
         <div className="landingContainerBody">
           <h1 className="shopTitle">Shop Texture</h1>
-          <div style={{margin: '0 auto', marginTop: '50px', width: '1150px'}}>
+          <div style={{margin: '0 auto', marginTop: '50px', width: '1156px'}}>
             <div className={this.state.tabPressed1 ? "shapePressed" : "shape"} style={{marginRight: '80px'}}></div>
             <div className={this.state.tabPressed2 ? "shapePressed" : "shape"} style={{marginRight: '80px'}}></div>
             <div className={this.state.tabPressed3 ? "shapePressed" : "shape"}></div>
           </div>
           <div style={{width: '100%', height: '80px'}}>
             <div className="titleCard">
-              <div onClick={this.handleClick1.bind(this)} className="defaultL">
+            <div onClick={this.handleClick1.bind(this)} className="defaultL">
                 <h1 className="type">Straight</h1>
               </div>
               <div onClick={this.handleClick2.bind(this)} className="defaultC">
@@ -65,12 +65,12 @@ render() {
               </div>
             </div>
           </div>
-          {this.state.tabPressed1 &&
-            <div>
-              <SLSections type="Loose Wave"></SLSections>
-              <SLSections type="Loose Wave"></SLSections>
-            </div>
-          }
+
+        {this.state.tabPressed3 &&
+          <div>
+            <SLSections type="Loose Wave" route="/loosewave"></SLSections>
+          </div>
+        }
         </div>
     <Footer></Footer>
     </div>

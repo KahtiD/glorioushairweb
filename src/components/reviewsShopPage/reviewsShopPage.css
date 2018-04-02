@@ -1,0 +1,16 @@
+.summaryReview{
+  width: 100%;
+  height: 37%;
+  border-bottom: 1px solid #281560;
+}
+
+.recentReview{
+  width: 100%;
+  height: 37%;
+}
+
+.recentTitle{
+  font-family: 'Shree Devanagari 714';
+  font-size: 45px;
+  color: #727272;
+}

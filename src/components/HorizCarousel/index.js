@@ -57,9 +57,6 @@ export class HorizCarousel extends Component {
    }));
  }
 
-
-
-
 render() {
 const {slideImage} = this.state;
 const imgtype = slideImage === 0 ? "img1" :

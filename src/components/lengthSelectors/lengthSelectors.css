@@ -1,0 +1,26 @@
+
+.selectorText{
+  font-family: 'Shree Devanagari 714';
+  color: #727272;
+  cursor: pointer;
+}
+
+.selectedLBox {
+  width: 431px;
+  height: 47px;
+  display: inline-block;
+  margin-right: 10px;
+  background: white;
+  border: 8px solid transparent;
+  border-image: url('../../images/goldbackground.png') 15 repeat;
+
+}
+
+.selectorLBox {
+width: 431px;
+height: 47px;
+display: inline-block;
+border: 1px solid #727272;
+margin-right: 10px;
+background: white;
+}

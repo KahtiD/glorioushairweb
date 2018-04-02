@@ -16,7 +16,7 @@ render() {
     <div className="picCanvas">
     </div>
     <div className="contentCanvas">
-      <div className="titleBox"><h1 className="typeTitle">{this.props.type}</h1></div>
+      <div className="titleBox"><Link to={this.props.route}><h1 className="typeTitle">{this.props.type}</h1></Link></div>
       <h1 className="itemText">Bundles</h1>
       <h1 className="itemText">Lace</h1>
       <h1 className="itemText">Bundles + Lace</h1>
