@@ -1,13 +1,14 @@
 
-.selectorText{
+.selectorTextL{
   font-family: 'Shree Devanagari 714';
   color: #727272;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .selectedLBox {
-  width: 431px;
-  height: 47px;
+  width: 288.77px;
+  height: 26.13px;
   display: inline-block;
   margin-right: 10px;
   background: white;
@@ -17,8 +18,8 @@
 }
 
 .selectorLBox {
-width: 431px;
-height: 47px;
+width: 288.77px;
+height: 26.13px;
 display: inline-block;
 border: 1px solid #727272;
 margin-right: 10px;

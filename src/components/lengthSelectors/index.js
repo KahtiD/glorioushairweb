@@ -33,12 +33,12 @@ render() {
 
   return(
   <div>
-      <div style={{width: '900px', margin: '0 auto', height: '52px'}}>
+      <div style={{width: '602px', margin: '0 auto', height: '34.84px'}}>
           <div className={ this.state.showL1 ? "selectedLBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
-            <h1 className="selectorText">{this.props.lengths}</h1>
+            <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
           <div className={ this.state.showL2 ? "selectedLBox" : "selectorLBox"} onClick={this.handleSelectL2.bind(this)}>
-            <h1 className="selectorText">{this.props.lengths}</h1>
+            <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
 
       </div>

@@ -34,7 +34,7 @@ render() {
 
   return(
   <div>
-      <div style={{width: '556px', margin: '0 auto', height: '52px'}}>
+      <div style={{width: '385.52px', margin: '0 auto', height: '34.84px'}}>
           <div className={ this.state.show1 ? "selectedBox" : "selectorBox"} onClick={this.handleSelect1.bind(this)}>
             <h1 className="selectorText">Frontal</h1>
           </div>

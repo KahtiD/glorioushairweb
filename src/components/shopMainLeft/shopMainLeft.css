@@ -1,6 +1,6 @@
 .mainLeftContainer {
-  width: 45%;
-  height: 1208px;
+  width: 47%;
+  height: 100%;
   border: 1px solid red;
   margin-right: 60px;
   float: left;
@@ -8,42 +8,40 @@
 
 .verticalCarousel{
   width: 100%;
-  height: 970px;
+  height: 100%;
   margin-top: 65px;
 }
 
 .backCanvas{
-  width: 381px;
-  height: 800px;
+  width: 389.27px;
+  height: 100%;
   margin: 0 auto;
   position: relative;
 }
 
 .frontCanvas{
-  width: 44%;
-  height: 457px;
+  width: 47%;
+  height: 440.19px;
   z-index: 1;
   background-color: white;
   position: absolute;
-  margin-top: 226px;
+  margin-top: 280px;
 }
 
 .topButton {
   transform: rotate(90deg);
   display: inline-block;
   float: left;
-  margin-left: 70px;
 }
 
 .downButton {
   transform: rotate(90deg);
   display: inline-block;
   float: right;
-  margin-right: 70px;
 }
 
 .socialsTitle{
-  font-size: 30px;
+  font-size: 20.1px;
   color: #4C4C4C;
   font-family: 'Shree Devanagari 714';
   display: inline-block;

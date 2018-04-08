@@ -9,21 +9,21 @@ import FShare from '../../images/facebooksign.png';
 
 
 const topCanvas = {
-  width: '381px',
-  height: '347px',
+  width: '389.27px',
+  height: '366.49px',
   boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.24)',
-  marginBottom: '260px'
+  marginBottom: '200px'
 }
 
 const bottomCanvas = {
-  width: '381px',
-  height: '347px',
+  width: '389.27px',
+  height: '366.49px',
   boxShadow: '0 5px 10px 0 rgba(0, 0, 0, 0.24)'
 }
 
 const middleCanvas = {
-  width: '500px',
-  height: '457px',
+  width: '469px',
+  height: '440.19px',
   margin: '0 auto',
   boxShadow: '0px 5px 54px 0px rgba(103, 18, 124, 0.5)'
 }
@@ -76,7 +76,7 @@ render() {
         </div>
       </div>
 
-        <div style={{width: '411px', height: '35px', margin: ' 0 auto', paddingTop: '36px'}}>
+        <div style={{width: '346.37px', height: '23.45px', margin: ' 0 auto', paddingTop: '36px'}}>
           <div style={{display: 'inline-block' , marginRight: '50px'}}>
             <img src={FShare} alt="fshare" style={{display: 'inline-block', paddingRight: '15px', position: 'relative', top: '6px'}}></img>
             <h1 className="socialsTitle">Share</h1>
@@ -93,10 +93,9 @@ render() {
 
 
 
-
-      <div style={{width: '100%', height: '150px', position: 'relative', bottom: '653px', zIndex: '3'}}>
-          <img src={Left} alt="leftbutton" width="150px" height="150px" className="topButton" onClick={this.upClick.bind(this)}></img>
-          <img src={Right} alt="rightbutton" width="150px" height="150px"className="downButton" onClick={this.downClick.bind(this)}></img>
+      <div style={{width: '100%', height: '100px', position: 'relative', bottom: '522.6px', zIndex: '3'}}>
+          <img src={Left} alt="leftbutton" width="100px" height="100px" className="topButton" onClick={this.upClick.bind(this)}></img>
+          <img src={Right} alt="rightbutton" width="100px" height="100px"className="downButton" onClick={this.downClick.bind(this)}></img>
       </div>
 
     </div>

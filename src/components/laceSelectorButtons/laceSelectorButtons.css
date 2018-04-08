@@ -3,11 +3,12 @@
   font-family: 'Shree Devanagari 714';
   color: #727272;
   cursor: pointer;
+  font-size: 23px;
 }
 
 .selectedBox {
-  width: 259px;
-  height: 47px;
+  width: 173.53px;
+  height: 34.49px;
   display: inline-block;
   margin-right: 10px;
   background: white;
@@ -17,8 +18,8 @@
 }
 
 .selectorBox {
-width: 259px;
-height: 47px;
+width: 173.53px;
+height: 34.49px;
 display: inline-block;
 border: 1px solid #727272;
 margin-right: 10px;
