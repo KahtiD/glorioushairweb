@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './shopPages.css';
-import {Footer, Header, MainLeft, MainRight} from '../../components';
+import {Footer, Header, MainLeft, MainRight, CartSummary} from '../../components';
 // import {Link} from 'react-router-dom';
 
 
@@ -9,6 +9,7 @@ export class shopPages extends Component {
    super(props);
    this.state = {
      showMenu: false,
+     showCart: false,
    }
 
 }
@@ -16,9 +17,18 @@ export class shopPages extends Component {
 menuShow = () => {
 console.log(this.state.showMenu)
   this.setState({
-    showMenu : !this.state.showMenu
+    showMenu : !this.state.showMenu,
+
   });
 }
+
+cartShown = () => {
+   this.setState({
+     showCart: !this.state.showCart,
+   })
+    console.log(this.state.showCart);
+}
+
 
 render() {
 
@@ -28,10 +38,13 @@ render() {
       <div className="sPagesContainerBody">
         <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
           <div className={ this.state.showMenu ? "moveSpacing2" : "containerBody"}>
-            <div style={{width: '100%', height: '100%'}}>
+            <div className={this.state.showCart ? 'moveShopBody' : 'defaultShopBody'}>
               <MainLeft></MainLeft>
-              <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian"></MainRight>
+              <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian" doCS={this.cartShown.bind(this)}></MainRight>
             </div>
+            {this.state.showCart &&
+              <CartSummary></CartSummary>
+            }
           </div>
         <Footer></Footer>
       </div>

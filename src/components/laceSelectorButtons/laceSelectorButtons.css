@@ -3,14 +3,14 @@
   font-family: 'Shree Devanagari 714';
   color: #727272;
   cursor: pointer;
-  font-size: 23px;
+  font-size: 20.7px;
 }
 
 .selectedBox {
-  width: 173.53px;
-  height: 34.49px;
+  width: 156.2px;
+  height: 31px;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 9px;
   background: white;
   border: 8px solid transparent;
   border-image: url('../../images/goldbackground.png') 15 repeat;
@@ -18,10 +18,10 @@
 }
 
 .selectorBox {
-width: 173.53px;
-height: 34.49px;
+width: 156.2px;
+height: 31px;
 display: inline-block;
 border: 1px solid #727272;
-margin-right: 10px;
+margin-right: 9px;
 background: white;
 }

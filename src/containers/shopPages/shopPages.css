@@ -6,3 +6,12 @@
 .moveSpacing2 {
   margin-top: 200px;
 }
+
+.moveShopBody {
+  left: -180px;
+  position: relative;
+}
+
+.defaultShopBody {
+  float: left;
+}

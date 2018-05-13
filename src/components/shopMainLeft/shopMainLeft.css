@@ -1,9 +1,8 @@
 .mainLeftContainer {
-  width: 47%;
+  width: 600px;
   height: 100%;
   border: 1px solid red;
   margin-right: 60px;
-  float: left;
 }
 
 .verticalCarousel{
@@ -13,19 +12,19 @@
 }
 
 .backCanvas{
-  width: 389.27px;
+  width: 350.3px;
   height: 100%;
   margin: 0 auto;
   position: relative;
 }
 
 .frontCanvas{
-  width: 47%;
-  height: 440.19px;
+  width: 600px;
+  height: 396.17px;
   z-index: 1;
   background-color: white;
   position: absolute;
-  margin-top: 280px;
+  margin-top: 222px;
 }
 
 .topButton {

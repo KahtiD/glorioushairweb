@@ -10,3 +10,4 @@ export {MainRight} from './shopMainRight';
 export {LaceSelectorButtons} from './laceSelectorButtons';
 export {LengthSelectorButtons} from './lengthSelectors';
 export {ReviewsShopPage} from './reviewsShopPage';
+export {CartSummary} from './cartSummary';

@@ -33,7 +33,7 @@ render() {
 
   return(
   <div>
-      <div style={{width: '602px', margin: '0 auto', height: '34.84px'}}>
+      <div style={{width: '542.8px', margin: '0 auto', height: '31.6px'}}>
           <div className={ this.state.showL1 ? "selectedLBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
             <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
