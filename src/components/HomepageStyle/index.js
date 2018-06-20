@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './HomepageStyle.css';
+import {Link} from 'react-router-dom';
 
 export class HomepageStyle extends Component {
-
-
-
 
 render() {
 
@@ -26,7 +24,7 @@ render() {
               <h1 className="type">Curly</h1>
             </div>
             <div style={{width: '289px', display: 'inline-block', float: 'right', paddingRight: '110.5px', paddingLeft: '112px'}}>
-              <h1 className="type">Wavy</h1>
+              <Link to=""><h1 className="type">Wavy</h1></Link>
             </div>
          </div>
 
