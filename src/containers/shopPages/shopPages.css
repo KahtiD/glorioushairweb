@@ -8,10 +8,13 @@
 }
 
 .moveShopBody {
-  left: -180px;
-  position: relative;
+  left: -250px;
+  width: 1207px;
+  margin: 0px;
+  position: absolute;
 }
 
 .defaultShopBody {
-  float: left;
+  width: 1207px;
+  margin: 0 auto;
 }

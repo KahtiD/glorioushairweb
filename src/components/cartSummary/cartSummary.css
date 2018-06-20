@@ -1,7 +1,8 @@
 .cartSummaryContainer {
-  width: 150px;
-  height: 150px;
+  width: 500px;
+  height: 100%;
   display: inline-block;
+  float: right;
 }
 
 .cartStyle {
