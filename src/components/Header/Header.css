@@ -1,0 +1,24 @@
+
+
+.headerContainer {
+  height: 169px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.logo {
+  width: 101.768px;
+  height: 128.585px;
+}
+
+.hide {
+  display: none;
+}
+
+.noShow {
+  margin-top: -91px;
+}
+
+.show {
+  margin-top: -52px;
+}

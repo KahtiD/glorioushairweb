@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Shree Devanagari 714';
+}
+
+
+.Footercontainer {
+  width: 100%;
+  height: 150px;
+}
+
+  .FooterShape {
+    width: 1039px;
+    height: 100px;
+    background-color: white;
+    z-index: 0;
+    margin: 0 auto;
+    margin-top: 55px;
+  }
+
+    .writtenlogo{
+      display: inline-block;
+      float: left;
+      width: 176px;
+      height: 74px;
+      margin-top: 13px;
+
+    }
+
+
+    .Socials {
+      display: inline-block;
+      margin-top: 20px;
+      padding-right: 32px;
+      margin-left: 604px;
+    }
+
+          .insta {
+            float: left;
+            width: 35px;
+            height: 35px;
+            padding-right: 7px;
+                margin-top: 6px;
+          }
+          .title1 {
+            float: right;
+            font-family: 'Shree Devanagari 714';
+            margin-top: 7px;
+            color: #281560;
+          }
+
+
+    .Contact {
+      display: inline-block;
+      float: right;
+      margin-top: 20px;
+      height: 35px;
+    }
+
+          .title2 {
+            font-family: 'Shree Devanagari 714';
+            margin-top: 7px;
+            color: #281560;
+          }

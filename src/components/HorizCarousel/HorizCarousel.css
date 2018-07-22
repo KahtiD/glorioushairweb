@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Snell Roundhand';
+}
+
+.container {
+width: 100%;
+height: 700px;
+}
+
+
+.backPhotos{
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  padding-top: 80px;
+  z-index: 2;
+}
+
+.topPhoto {
+    z-index: 3;
+    margin: 0px auto;
+    position: relative;
+    bottom: 450px;
+}
+
+.l {
+float: left;
+margin-left: 50px;
+}
+
+.r {
+ float: right;
+ margin-right: 50px;
+}
+
+.shop-button {
+  background-color: #281560;
+  color: #FFFFFF;
+  font-family: 'Snell Roundhand';
+  width: 239px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: thin;
+  border: 0;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
+}
+
+.Shown {
+  background-image: url('../../images/shown-8.png');
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 15px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.NotShown {
+  background-image: url('../../images/notshown-8.png');
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 15px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.img1 {
+  width: initial;
+  height: initial;
+  background-image: url('../../images/DefaultBundlePic.jpg');
+  -webkit-transition-timing-function: ease-out;
+  background-repeat: no-repeat;
+}
+
+.img2 {
+  width: initial;
+  height: initial;
+  background-image: url('../../images/placeholder2.jpg');
+  -webkit-transition-timing-function: ease-out;
+  background-repeat: no-repeat;
+}
+
+.img3 {
+  width: initial;
+  height: initial;
+  background-image: url('../../images/placeholder3.jpg');
+  -webkit-transition-timing-function: ease-out;
+  background-repeat: repeat;
+}
