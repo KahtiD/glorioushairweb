@@ -34,10 +34,11 @@ render() {
 
   return(
   <div>
-      <div style={{width: '346.9px', margin: '0 auto', height: '31.36px'}}>
+      <div style={{width: '354.9px', margin: '0 auto', height: '39.36px'}}>
           <div className={ this.state.show1 ? "selectedBox" : "selectorBox"} onClick={this.handleSelect1.bind(this)}>
             <h1 className="selectorText">Frontal</h1>
           </div>
+          <div style={{width: '15px', height: '31.36px', display: 'inline-block'}}></div>
           <div className={ this.state.show2 ? "selectedBox" : "selectorBox"} onClick={this.handleSelect2.bind(this)}>
             <h1 className="selectorText">Closure</h1>
           </div>

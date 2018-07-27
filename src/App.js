@@ -10,7 +10,7 @@ export class App extends Component {
        loadingPage
        setTimeout(() => {
          loadingPage.outerHTML = ''
-       }, 2500)
+       }, 1000)
      }, 1000)
    }
   }

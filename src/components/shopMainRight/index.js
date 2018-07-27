@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './shopMainRight.css';
-import {LaceSelectorButtons, LengthSelectorButtons, ReviewsShopPage, CartSummary} from '../../components';
+import {LaceSelectorButtons, LengthSelectorButtons, ReviewsShopPage,} from '../../components';
 // import {Link} from 'react-router-dom';
 
 

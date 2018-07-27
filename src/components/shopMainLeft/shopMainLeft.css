@@ -1,8 +1,8 @@
 .mainLeftContainer {
   width: 600px;
   height: 100%;
-  border: 1px solid red;
-  margin-right: 60px;
+  /* border: 1px solid red; */
+  margin-right: 70px;
 }
 
 .verticalCarousel{
@@ -44,4 +44,27 @@
   color: #4C4C4C;
   font-family: 'Shree Devanagari 714';
   display: inline-block;
+}
+
+.mtopCanvas {
+  width: 350.3px;
+  height: 329.8px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 143px;
+  background-color: pink;
+}
+
+.mbottomCanvas {
+  width: 350.3px;
+  height: 329.8px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
+  background-color: yellow;
+}
+
+.mmiddleCanvas {
+  width: 422.1px;
+  height: 396.17px;
+  margin: 0 auto;
+  box-shadow: 0px 5px 54px 0px rgba(103, 18, 124, 0.5);
+  background-color: blue;
 }

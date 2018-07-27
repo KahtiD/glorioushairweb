@@ -1,7 +1,7 @@
 .mainRightContainer {
-  width: 100%;
+  width: 120%;
   height: 100%;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   vertical-align: top;
 }
 

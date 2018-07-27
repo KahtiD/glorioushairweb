@@ -1,0 +1,71 @@
+.picContainer {
+  width: 120%;
+  height: 870px;
+  display: flex;
+  position: relative;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.hideWayHeader {
+  width: 120%;
+  height: 100px;
+  background: white;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.picSection {
+  min-width: 288px;
+  height: 100%;
+  transition: flex .50s ease-in-out;
+}
+.picSectionL {
+  min-width: 288px;
+  height: 100%;
+  transition: flex .50s ease-in-out;
+  background-position: 0 center;
+}
+
+.picSection:hover {
+  flex-grow: 1;
+}
+
+.picSectionL:hover {
+  flex-grow: 1;
+  background-position: 100% center;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+
+.one {
+  background: pink;
+  background-image: url('../../images/curlyHair.jpg');
+  background-size: cover;
+}
+
+.two{
+  background: yellow;
+  background-image:
+}
+
+.three{
+  background: red;
+}
+
+.four {
+  background: blue;
+}
+
+.five {
+  background: green;
+  z-index: 1
+}

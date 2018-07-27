@@ -39,12 +39,19 @@ handleClick3 = () => {
   });
 }
 
+menuShow = () => {
+console.log(this.state.showMenu)
+  this.setState({
+    showMenu : !this.state.showMenu
+  });
+}
+
 render() {
 
   return(
 
     <div>
-      <Header></Header>
+      <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu}></Header>
         <div className="landingContainerBody">
           <h1 className="shopTitle">Shop Texture</h1>
           <div style={{margin: '0 auto', marginTop: '50px', width: '1156px'}}>

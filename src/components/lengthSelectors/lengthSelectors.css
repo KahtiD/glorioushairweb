@@ -7,14 +7,24 @@
 }
 
 .selectedLBox {
-  width: 260px;
-  height: 29.5px;
+  width: 271px;
+  height: 40px;
   display: inline-block;
-  margin-right: 9px;
-  background: white;
-  border: 8px solid transparent;
-  border-image: url('../../images/goldbackground.png') 15 repeat;
-
+  background-image: url(/static/media/goldbackground.f3c77173.png);
+  background-repeat: repeat;
+  top: -5px;
+  position: relative;
+  left: 7px;
+}
+.selectedRBox {
+  width: 271px;
+  height: 40px;
+  display: inline-block;
+  background-image: url('../../images/goldbackground.png');
+  background-repeat: repeat;
+  top: -5px;
+  position: relative;
+  left: -6px
 }
 
 .selectorLBox {
@@ -22,6 +32,14 @@ width: 260px;
 height: 29.5px;
 display: inline-block;
 border: 1px solid #727272;
-margin-right: 9px;
 background: white;
+margin-top: 18px;
+}
+
+.selectorNBox {
+width: 260px;
+height: 29.5px;
+display: inline-block;
+background: white;
+margin-top: 18px;
 }

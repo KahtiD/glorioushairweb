@@ -37,7 +37,7 @@ render() {
 <div>
       <div className="sPagesContainerBody">
         <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
-          <div className={ this.state.showMenu ? "moveSpacing2" : "containerBody"}>
+          <div className={this.state.showMenu ? "moveSpacing2" : "containerBody"}>
             <div className={this.state.showCart ? 'moveShopBody' : 'defaultShopBody'}>
               <MainLeft></MainLeft>
               <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian" doCS={this.cartShown.bind(this)}></MainRight>

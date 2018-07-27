@@ -21,30 +21,17 @@ render() {
 
 
         { this.props.shoMenu &&
-            <div style={{ width: '1299px', height: '278px', margin: '0 auto', paddingTop: '110px'}}>
-              <div style={{ zIndex: '0', position: 'absolute'}}>
+            <div style={{ width: '100%', height: '120px', margin: '0 auto', paddingTop: '110px'}}>
+              <div style={{ zIndex: '0', position: 'absolute', marginLeft: '120px', marginTop: '6px'}}>
                 <img className="Logo" src={Logo} alt='logo'></img>
               </div>
               <div className="menuContainer">
                 <nav>
-                  <div className="home">
                     <Link to="/" className="linkTitle" href="">Home</Link>
-                  </div>
-                  <div className="shop">
                     <Link to="/shop" className="linkTitle" href="">Shop</Link>
-                        <a className="list" href="">Straight</a>
-                        <a className="list" href="">Curly</a>
-                        <a className="list" href="">Wavy</a>
-                    </div>
-                  <div className="about">
                     <a className="linkTitle" href="#aboutus">About</a>
-                  </div>
-                  <div className="contactus">
                     <a className="linkTitle" href="">Contact Us</a>
-                  </div>
-                  <div className="asseen">
                     <a className="linkTitle" href="">As seen</a>
-                  </div>
                 </nav>
               </div>
             </div>

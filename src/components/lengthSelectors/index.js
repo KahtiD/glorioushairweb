@@ -30,18 +30,48 @@ export class LengthSelectorButtons extends Component {
 
 
 render() {
-
+  console.log(this.state.showL1);
   return(
   <div>
-      <div style={{width: '542.8px', margin: '0 auto', height: '31.6px'}}>
-          <div className={ this.state.showL1 ? "selectedLBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
-            <h1 className="selectorTextL">{this.props.lengths}</h1>
-          </div>
-          <div className={ this.state.showL2 ? "selectedLBox" : "selectorLBox"} onClick={this.handleSelectL2.bind(this)}>
+      <div style={{width: '47.5%', margin: '0 auto', height: '43px', position: 'absolute', zIndex: '2'}}>
+
+        <div style={{width: '542px', height: '100%', margin: '0 auto'}}>
+
+          <div className={this.state.showL1 ? "selectorNBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
             <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
 
+          <div style={{width: '16px', height: '43px', display: 'inline-block'}}></div>
+
+          <div className={this.state.showL2 ? "selectorNBox" : "selectorLBox"} onClick={this.handleSelectL2.bind(this)}>
+            <h1 className="selectorTextL">{this.props.lengths}</h1>
+          </div>
+
+        </div>
+
       </div>
+
+      <div style={{width: '568px', height: '43px', margin: '0 auto'}}>
+        <div style={{width: '276px', height: '43px', position: 'relative', zIndex: '1' , display: 'inline-block'}}>
+          {this.state.showL1 &&
+            <div className="selectedLBox">
+              <h1 className="selectorTextL">{this.props.lengths}</h1>
+            </div>
+          }
+        </div>
+
+        <div style={{width: '16px', height: '43px', display: 'inline-block'}}></div>
+
+        <div style={{width: '276px', height: '43px', position: 'relative', zIndex: '1' , display: 'inline-block'}}>
+
+          {this.state.showL2 &&
+            <div className="selectedRBox">
+              <h1 className="selectorTextL">{this.props.lengths}</h1>
+            </div>
+          }
+        </div>
+      </div>
+
   </div>
 
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ContactForm.css';
 import {Footer, Header} from '../../components';
-import axios from 'axios';
+
 
 
 
@@ -216,7 +216,7 @@ render() {
   <div>
     <div className="body">
       <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
-      <div className={ this.state.showMenu ? "moveSpacing2" : "containerBody"}>
+      <div className="containerBody">
       {!this.state.formSubmit ?
           <div className="formContainer">
           <div className="form">
