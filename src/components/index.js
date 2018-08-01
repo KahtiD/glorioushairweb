@@ -12,3 +12,4 @@ export {LengthSelectorButtons} from './lengthSelectors';
 export {ReviewsShopPage} from './reviewsShopPage';
 export {CartSummary} from './cartSummary';
 export {PicHeader} from './PicHeader';
+export {ThreeSC} from './ThreeShopCategories';

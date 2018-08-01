@@ -13,6 +13,7 @@ export class App extends Component {
        }, 1000)
      }, 1000)
    }
+
   }
 
 render() {

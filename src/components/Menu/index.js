@@ -29,8 +29,8 @@ render() {
                 <nav>
                     <Link to="/" className="linkTitle" href="">Home</Link>
                     <Link to="/shop" className="linkTitle" href="">Shop</Link>
-                    <a className="linkTitle" href="#aboutus">About</a>
-                    <a className="linkTitle" href="">Contact Us</a>
+                    <a className="linkTitle" href="/#aboutus">About</a>
+                    <Link to="/contactus" className="linkTitle" href="">Contact Us</Link>
                     <a className="linkTitle" href="">As seen</a>
                 </nav>
               </div>

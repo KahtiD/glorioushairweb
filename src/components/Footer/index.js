@@ -17,7 +17,7 @@ render() {
 
       <div className="FooterShape">
           <div className="writtenlogo">
-              <Link to='/'><img src={WrittenLogo} alt='logo'/></Link>
+              <Link to="/" href=""><img src={WrittenLogo} alt='logo'/></Link>
             </div>
           <div className="Socials" >
             <a href="https://www.instagram.com/glorioushairuk/?hl=en" target="_blank" rel="noopener noreferrer">

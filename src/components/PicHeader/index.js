@@ -10,7 +10,21 @@ constructor(props) {
   super(props);
   this.state = {
     hide: false,
+    swap: false,
   }
+}
+
+changeDiv() {
+  this.setState({
+    swap: true,
+  });
+}
+
+resetDiv(){if (this.state.swap === true) {
+  this.setState({
+    swap: false,
+  });
+}
 }
 
 handleHover = () => {
@@ -30,29 +44,33 @@ handleHover = () => {
     return(
       <div onScroll={this.handleHover.bind(this)}>
         { this.state.hide &&
-            <div style={{ width: '100%', height: '120px', margin: '0 auto', position: 'absolute'}}>
-              <div style={{ zIndex: '0', position: 'absolute', marginLeft: '120px', marginTop: '6px'}}>
-                <img className="Logo" src={Logo} alt='logo'></img>
-              </div>
+            <div style={{ width: '100%', height: '120px', margin: '0 auto', position: 'absolute', zIndex: '100'}}>
               <div className="menuContainer">
                 <nav>
                     <Link to="/" className="linkTitle" href="">Home</Link>
                     <Link to="/shop" className="linkTitle" href="">Shop</Link>
                     <a className="linkTitle" href="#aboutus">About</a>
-                    <a className="linkTitle" href="">Contact Us</a>
+                    <Link to="/contactus" className="linkTitle" href="">Contact Us</Link>
                     <a className="linkTitle" href="">As seen</a>
                 </nav>
               </div>
             </div>
           }
-        <div className="picContainer">
-          <div style={{backgroundImage: `url(${hairImage})`}} className="picSection one"></div>
-          <div className="picSection two"></div>
-          <div className="picSection three"></div>
-          <div className="picSection four"></div>
-          <div className="picSectionL five"></div>
+        <div className="highLevelContainer" style={{zIndex: '2'}}>
+          <div className="picContainer">
+            <div onMouseOver={this.resetDiv.bind(this)} style={{backgroundImage: `url(${hairImage})`}} className="picSection one"></div>
+            <div onMouseOver={this.resetDiv.bind(this)}className="picSection two"></div>
+            <div onMouseOver={this.resetDiv.bind(this)} className="picSection three"></div>
+            <div onMouseOver={this.changeDiv.bind(this)} className="picSection four"></div>
+          </div>
+          <div onMouseOver={this.resetDiv.bind(this)} className="picContainer2">
+            <div className={this.state.swap ? "picSection five:disabled" : "picSection five"}></div>
+          </div>
         </div>
-
+        {this.state.swap &&
+        <div style={{width:'100%', height:'866px', zIndex: '1', position: 'absolute', top: '0px'}}>
+          <div className="lowLevel"></div>
+        </div>}
       </div>
     );
   }

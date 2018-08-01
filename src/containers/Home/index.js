@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Home.css';
 import {Footer, PicHeader, AboutUs, HomepageStyle} from '../../components';
+import Logo from '../../images/whiteHands.png';
 import {Link} from 'react-router-dom';
 
 export class Home extends Component {
 
   render() {
-
     return (
       <div>
           <PicHeader></PicHeader>

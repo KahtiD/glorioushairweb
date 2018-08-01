@@ -1,20 +1,4 @@
 
-.Header {
-  height: 25%;
-  width: 100%;
-}
-
-    .text1 {
-      text-align: center;
-      font-family: 'Shree Devanagari 714';
-      margin-bottom: 0px;
-      font-size: 18px;
-    }
-
-.moveSpacing1 {
-  margin-top: 20px;
-}
-
 .body {
   width: 100%;
   max-height: 100%;

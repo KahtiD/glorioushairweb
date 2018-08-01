@@ -47,27 +47,12 @@ export class MainLeft extends Component {
     }
 
 
- designatedImageI = () => {
-   if (this.state.imageCount === 1) {
-     this.setState({
-       image1: hairImage2,
-     }); } else if (this.state.image === 2) {
-       this.setState({
-         image2: hairImage3,
-       }) } else if (this.state.image === 3) {
-         this.setState({
-           image3: hairImage1,
-         })
-       }
- }
-
-
 render() {
 
-  const designatedImageI = this.designatedImageI.bind(this);
   const one = this.state.image1;
   const two = this.state.image2;
   const three = this.state.image3;
+
 
   return(
 
@@ -82,10 +67,14 @@ render() {
           </div>
         <div className="backCanvas">
           <div style={this.state.imageCount === 2 ? {backgroundImage: `url(${three})`} :
-                      this.state.imageCount === 3 ? {backgroundImage: `url(${one})`} : {backgroundImage: `url(${two})`}} className="mtopCanvas"></div>
+                      this.state.imageCount === 3 ? {backgroundImage: `url(${one})`} : {backgroundImage: `url(${two})`}}
+                      className="mtopCanvas"
+                      onClick={this.downSlide.bind(this)}></div>
 
           <div style={this.state.imageCount === 3 ? {backgroundImage: `url(${two})`} :
-                      this.state.imageCount === 1 ? {backgroundImage: `url(${three})`} : {backgroundImage: `url(${one})`}} className="mbottomCanvas"></div>
+                      this.state.imageCount === 1 ? {backgroundImage: `url(${three})`} : {backgroundImage: `url(${one})`}}
+                      className="mbottomCanvas"
+                      onClick={this.upSlide.bind(this)}></div>
         </div>
       </div>
 
