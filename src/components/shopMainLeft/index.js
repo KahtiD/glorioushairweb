@@ -56,7 +56,7 @@ render() {
 
   return(
 
-  <div style={{display: 'inline-block'}}>
+  <div style={{display: 'inline-block', verticalAlign: 'top'}}>
     <div className="mainLeftContainer">
 
       <div className="verticalCarousel">

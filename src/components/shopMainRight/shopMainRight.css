@@ -14,8 +14,8 @@
 .subTitles {
   font-family: 'Shree Devanagari 714';
   color: #727272;
-  font-size: 22.59px;
   font-weight: bold;
+  text-align: center;
 }
 
 .cartButton{

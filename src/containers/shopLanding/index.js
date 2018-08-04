@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './shopLanding.css';
-import {Footer, Header, SLSections, ThreeSC} from '../../components';
+import {Footer, Header, ThreeSC} from '../../components';
 
 
 export class shopLanding extends Component {

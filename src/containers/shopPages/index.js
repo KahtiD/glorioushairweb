@@ -9,7 +9,6 @@ export class shopPages extends Component {
    super(props);
    this.state = {
      showMenu: false,
-     showCart: false,
    }
 
 }
@@ -22,12 +21,6 @@ console.log(this.state.showMenu)
   });
 }
 
-cartShown = () => {
-   this.setState({
-     showCart: !this.state.showCart,
-   })
-    console.log(this.state.showCart);
-}
 
 
 render() {
@@ -39,10 +32,7 @@ render() {
         <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
           <div className={this.state.showMenu ? "moveSpacing2" : "containerBody"}>
               <MainLeft></MainLeft>
-              <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian" doCS={this.cartShown.bind(this)}></MainRight>
-            {this.state.showCart &&
-              <CartSummary></CartSummary>
-            }
+              <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian" ></MainRight>
           </div>
         <Footer></Footer>
       </div>

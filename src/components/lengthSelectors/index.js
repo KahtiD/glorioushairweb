@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import './lengthSelectors.css';
 // import {Link} from 'react-router-dom';
 
+export class SeperateLSB extends Components {
+
+  render() {
+    return(
+        <div className={this.props.showL1 ? "selectorNBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
+          <h1 className="selectorTextL">{this.props.lengths}</h1>
+        </div>
+    );
+  }
+}
+
+
+
+
 
 export class LengthSelectorButtons extends Component {
   constructor(props) {
@@ -30,13 +44,15 @@ export class LengthSelectorButtons extends Component {
 
 
 render() {
-  console.log(this.state.showL1);
+  const handleSelectL1 = this.handleSelectL1.bind(this);
+  const handleSelectL2 = this.handleSelectL2.bind(this);
+  const showL1 = this.state.showL1;
+  const showL2 = this.state.showL2;
   return(
   <div>
       <div style={{width: '47.5%', margin: '0 auto', height: '43px', position: 'absolute', zIndex: '2'}}>
 
         <div style={{width: '542px', height: '100%', margin: '0 auto'}}>
-
           <div className={this.state.showL1 ? "selectorNBox" : "selectorLBox"} onClick={this.handleSelectL1.bind(this)}>
             <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
@@ -46,7 +62,6 @@ render() {
           <div className={this.state.showL2 ? "selectorNBox" : "selectorLBox"} onClick={this.handleSelectL2.bind(this)}>
             <h1 className="selectorTextL">{this.props.lengths}</h1>
           </div>
-
         </div>
 
       </div>

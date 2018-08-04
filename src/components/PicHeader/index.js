@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './PicHeader.css';
 import '../Menu/Menu.css';
 import hairImage from '../../images/curlyHair.jpg';
-import Logo from '../../images/whiteHands.png';
 import {Link} from 'react-router-dom';
 
 export class PicHeader extends Component {
