@@ -33,9 +33,10 @@ render() {
           <div className={this.state.showMenu ? "moveSpacing2" : "containerBody"}>
               <MainLeft></MainLeft>
               <MainRight hairPatternName="Loose Wave" hairTextureName="Brazillian" ></MainRight>
+              <div className="basket"></div>
           </div>
-        <Footer></Footer>
       </div>
+     <Footer></Footer>
 </div>
 
     );

@@ -17,3 +17,12 @@
   width: 1325px;
   margin: 0 auto;
 }
+
+.basket {
+  width: 300px;
+  height: 300px;
+  border: 1px solid grey;
+  position: relative;
+  top: -308px;
+  left: 500px;
+}
