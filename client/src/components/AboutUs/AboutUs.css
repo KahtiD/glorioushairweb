@@ -1,0 +1,38 @@
+
+
+
+.AboutUsContainer {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 39px;
+}
+.titleAU {
+  font-family: 'Snell Roundhand';
+  font-size: 30px;
+  color: black;
+  border-bottom: 1px solid #281560;
+  width: 239px;
+  margin: 0 auto;
+}
+
+.Title {
+  font-family: 'Snell Roundhand';
+  font-size: 41.18px;
+  font-weight: normal;
+  margin-top: 70px;
+  margin-bottom: 0px;
+  width: 220px;
+  margin-right: 14px;
+}
+
+p {
+  text-align: center;
+  font-family: 'Shree Devanagari 714';
+  font-size: 24px;
+  margin-top: 0px;
+}
+
+.Bio {
+  margin-top: 50px;
+}
