@@ -1,0 +1,19 @@
+.sPagesContainerBody {
+  width: 100%;
+}
+
+.moveSpacing2 {
+  margin-top: 30px;
+}
+
+.moveShopBody {
+  left: -250px;
+  width: 1207px;
+  margin: 0px;
+  position: absolute;
+}
+
+.defaultShopBody {
+  width: 1325px;
+  margin: 0 auto;
+}

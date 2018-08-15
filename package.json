@@ -1,34 +1,16 @@
 {
-  "name": "glorioushairweb",
-  "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:9090",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "bluebird": "^3.5.1",
-    "body-parser": "^1.18.3",
-    "crypto": "^1.0.1",
-    "crypto-js": "^3.1.9-1",
-    "email-templates": "^4.0.1",
-    "express": "^4.16.3",
-    "handlebars": "^4.0.11",
-    "loopback": "^3.21.0",
-    "node.js": "0.0.0",
-    "nodemailer": "^4.6.7",
-    "nonce": "^1.0.4",
-    "oauth-1.0a": "^2.2.4",
-    "path": "^0.12.7",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.4",
-    "request": "^2.87.0",
-    "woocommerce-api": "^1.4.2"
-  },
+  "name": "GloriousHair",
+  "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }

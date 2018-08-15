@@ -1,0 +1,36 @@
+
+
+.selectorText{
+  font-family: 'Shree Devanagari 714';
+  color: #727272;
+  cursor: pointer;
+  font-size: 20.7px;
+}
+
+.selectedBox {
+  width: 156.2px;
+  height: 31px;
+  display: inline-block;
+  background: white;
+  border: 4px solid transparent;
+  border-image: url('../../images/goldbackground.png') 15 repeat;
+}
+
+
+
+.selectorBox {
+width: 156.2px;
+height: 31px;
+display: inline-block;
+border: 1px solid #727272;
+background: white;
+}
+
+.nonselectedBox {
+width: 156.2px;
+height: 31px;
+display: inline-block;
+border: 1px solid #727272;
+background: white;
+opacity: 0.4;
+}
