@@ -35,7 +35,6 @@ export class MainLeft extends Component {
           imageCount: 1,
         });
       }
-      console.log("downSlide", this.state.imageCount)
   }
 
 
@@ -43,15 +42,13 @@ export class MainLeft extends Component {
       this.setState({
         imageCount: this.state.imageCount === 1 ? 3 : this.state.imageCount - 1,
       });
-      console.log("upSlide", this.state.imageCount)
     }
 
 
 render() {
-
-  const one = this.state.image1;
-  const two = this.state.image2;
-  const three = this.state.image3;
+  const one = this.props.productAllData.images && this.props.productAllData.images[0].src;
+  const two = this.props.productAllData.images && this.props.productAllData.images[1].src;
+  const three = this.props.productAllData.images && this.props.productAllData.images[2].src;
 
 
   return(
