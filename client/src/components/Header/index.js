@@ -17,7 +17,7 @@ export class Header extends Component {
          <Link to="/"><img src={Logo} alt='Logo' className={this.props.showMenu ? 'hide' : 'logo'}/></Link>
        </div>
        <div className={this.props.showMenu ? 'show' : 'noShow'}>
-        <Menu movBody={this.props.moveBody} shoMenu={this.props.showMenu} ></Menu>
+        <Menu movBody={this.props.moveBody} shoMenu={this.props.showMenu} cart={this.props.cart}></Menu>
         </div>
       </div>
 

@@ -13,7 +13,7 @@ render() {
   <div>
     <div className="sectionsContainer">
     <div style={{width: '710px', height: '100%', margin: '0 auto'}}>
-    <div className="picCanvas">
+    <div className="picCanvas" style={{backgroundImage: `url(${this.props.image})`}}>
     </div>
     <div className="contentCanvas">
       <div className="titleBox"><Link to={this.props.route}><h1 className="typeTitle">{this.props.type}</h1></Link></div>

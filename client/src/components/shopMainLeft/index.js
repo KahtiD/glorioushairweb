@@ -46,9 +46,9 @@ export class MainLeft extends Component {
 
 
 render() {
-  const one = this.props.productAllData.images && this.props.productAllData.images[0].src;
-  const two = this.props.productAllData.images && this.props.productAllData.images[1].src;
-  const three = this.props.productAllData.images && this.props.productAllData.images[2].src;
+  const one = this.props.productAllData.images && this.props.productAllData.images[0] && this.props.productAllData.images[0].src;
+  const two = this.props.productAllData.images && this.props.productAllData.images[1] && this.props.productAllData.images[1].src;
+  const three = this.props.productAllData.images && this.props.productAllData.images[2] && this.props.productAllData.images[2].src;
 
 
   return(

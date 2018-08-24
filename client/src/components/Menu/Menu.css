@@ -1,5 +1,5 @@
 .icons {
-  width: 120px;
+  width: 131px;
   height: 40px;
   float: right;
   padding-right: 142px;
@@ -14,8 +14,8 @@
 }
 .MenuIcon {
   display: inline-block;
-  width: 46px;
-  height: 49px;
+  width: 41px;
+  height: 40px;
 
 }
 
@@ -60,4 +60,21 @@ a:hover {
   text-decoration: none;
   text-align: center;
   padding-left: 80px;
+}
+
+.cartList {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  left: -28px;
+  bottom: 40px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #EBD382;
+}
+
+.numbers {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 5px;
 }

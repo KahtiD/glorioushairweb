@@ -9,9 +9,17 @@ export class shopLanding extends Component {
 
    this.state = {
       showMenu : false,
+      data: [],
+      texture: [],
+      pattern: [],
+      brazilianHair: [],
+      peruvianHair: [],
+      malaysianHair: [],
+      straight: [],
+      curly: [],
+      wavy: [],
    }
   }
-
 
 menuShow = () => {
 console.log(this.state.showMenu)
@@ -20,18 +28,44 @@ console.log(this.state.showMenu)
   });
 }
 
+async componentDidMount() {
+  const response = await fetch('/products');
+  const json = await response.json();
+  this.setState({
+    data: json,
+  })
+  this.state.data.forEach((product, i) => {
+    product.description === '<p>Brazilian</p>\n' && this.state.brazilianHair.push(product);
+    product.description === '<p>Peruvian</p>\n' && this.state.peruvianHair.push(product);
+    product.description === '<p>Malaysian</p>\n' && this.state.malaysianHair.push(product);
+
+    product.categories.forEach( (category, i) =>  {
+      category.name === 'Straight' && this.state.straight.push(product);
+      category.name === 'Curly' && this.state.curly.push(product);
+      category.name === 'Wavy' && this.state.wavy.push(product);
+    })
+  })
+  this.state.texture.push(this.state.brazilianHair, this.state.peruvianHair, this.state.malaysianHair);
+  this.state.pattern.push(this.state.straight, this.state.curly, this.state.wavy);
+}
+
+
 render() {
-
   return(
-
     <div>
       <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu}></Header>
+
         <ThreeSC shopTitle="Shop Style"
-                 leftCardTitle="Straight" centerCardTitle="Curly" rightCardTitle="Wavy">
-        </ThreeSC>
+                 leftCardTitle="Straight" centerCardTitle="Curly" rightCardTitle="Wavy"
+                 left={this.state.straight} center={this.state.curly}
+                 right={this.state.wavy} />
+
+
         <ThreeSC shopTitle="Shop Texture"
-                 leftCardTitle="Brazilian" centerCardTitle="Peruvian" rightCardTitle="Malaysian">
-        </ThreeSC>
+                 leftCardTitle="Brazilian" centerCardTitle="Malaysian" rightCardTitle="Peruvian"
+                 left={this.state.brazilianHair} center={this.state.malaysianHair}
+                 right={this.state.peruvianHair}/>
+
     <Footer></Footer>
     </div>
 

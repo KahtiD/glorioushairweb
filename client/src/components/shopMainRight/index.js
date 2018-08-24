@@ -11,7 +11,7 @@ render() {
   if (productAllData.length === 0) {
       return null;
     }
-  const defaultLace = productAllData.default_attributes[0].option
+  const defaultLace = productAllData.default_attributes[0] && productAllData.default_attributes[0].option
   const evenPrice = evenArray[evenSelected] && evenArray[evenSelected].price;
   const oddPrice = oddArray[oddSelected] && oddArray[oddSelected].price;
   let highest = Math.max(...productVarations.map(highPrice => highPrice.price));

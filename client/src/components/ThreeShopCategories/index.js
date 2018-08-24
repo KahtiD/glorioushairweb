@@ -10,8 +10,8 @@ export class ThreeSC extends Component {
       tabPressed1 : false,
       tabPressed2 : false,
       tabPressed3 : false,
-      showPressed : false
-   }
+      showPressed : false,
+    }
   }
 
 handleClick1 = () => {
@@ -39,7 +39,9 @@ handleClick3 = () => {
   });
 }
 
+
   render() {
+    const { left, center, right} = this.props;
     return (
       <div>
       <div className="landingContainerBody">
@@ -64,19 +66,30 @@ handleClick3 = () => {
           </div>
         </div>
 
+
         {this.state.tabPressed1 &&
           <div>
-            <SLSections type="Brazilian" route="/loosewave"></SLSections>
+          {left.map( (item, i) => {
+            return (<SLSections key={item.id} type={left[i] && left[i].name}
+                                route="/loosewave" image={left[i] && left[i].images[0].src}></SLSections>)
+          })}
           </div>
         }
+
         {this.state.tabPressed2 &&
           <div>
-            <SLSections type="Kinky Curly" route="/loosewave"></SLSections>
+          {center.map( (item, i) => {
+            return (<SLSections key={item.id} type={center[i] && center[i].name}
+                                route="/loosewave" image={center[i] && center[i].images[0].src}></SLSections>)
+          })}
           </div>
         }
         {this.state.tabPressed3 &&
           <div>
-            <SLSections type="Loose Wave" route="/loosewave"></SLSections>
+          {right.map( (item, i) => {
+            return (<SLSections key={item.id} type={right[i] && right[i].name}
+                                route="/loosewave" image={right[i] && right[i].images[0].src}></SLSections>)
+          })}
           </div>
         }
       </div>

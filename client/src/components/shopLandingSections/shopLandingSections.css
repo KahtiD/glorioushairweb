@@ -7,9 +7,10 @@
 .picCanvas {
   width: 329px;
   height: 352px;
-  background-color: grey;
   display: inline-block;
   margin-right: 50px;
+  background-size: cover;
+  box-shadow: 0 14px 31px 0 rgba(0, 0, 0, 0.3);
 }
 
 .contentCanvas {

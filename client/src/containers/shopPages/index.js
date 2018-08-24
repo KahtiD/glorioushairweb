@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './shopPages.css';
-import {Footer, Header, MainLeft, MainRight, CartSummary} from '../../components';
+import {Footer, Header, MainLeft, MainRight} from '../../components';
 import OAuth from 'oauth-1.0a';
 import crypto from 'crypto';
 // import {Link} from 'react-router-dom';
@@ -57,7 +57,7 @@ async componentDidMount() {
   const json = await response.json();
   json.forEach(product => { idType.push(JSON.stringify(product.id)) });
   this.setState({ response: idType });
-
+  console.log(this.state.response);
 
   const oauth = OAuth({
     consumer: {
@@ -71,13 +71,13 @@ async componentDidMount() {
   });
 
   const request_data1 = {
-    url: "http://localhost:8888/wp-json/wc/v2/products/" + this.state.response[0] + "/variations?per_page=15",
+    url: "http://localhost:8888/wp-json/wc/v2/products/" + this.state.response[2] + "/variations?per_page=15",
     method: 'GET',
   };
 
   console.log('url', request_data1.url)
   const request_data2 = {
-    url: 'http://localhost:8888/wp-json/wc/v2/products/' + this.state.response[0],
+    url: 'http://localhost:8888/wp-json/wc/v2/products/' + this.state.response[2],
     method: 'GET',
   };
 
@@ -122,12 +122,11 @@ console.log(this.state.showMenu)
 render() {
   const regex = /(<([^>]+)>)/ig;
   const name = this.state.products2.description && this.state.products2.description.replace(regex, '');
-  console.log('name', this.state.products2.description);
   return(
 
 <div>
       <div className="sPagesContainerBody">
-        <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
+        <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} cart={this.state.cart} ></Header>
           <div className={this.state.showMenu ? "moveSpacing2" : "containerBody"}>
               <MainLeft productAllData={this.state.products2}></MainLeft>
               <MainRight hairPatternName={this.state.products2.name} hairTextureName={name}
