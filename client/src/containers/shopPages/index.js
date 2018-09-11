@@ -6,7 +6,7 @@ import crypto from 'crypto';
 // import {Link} from 'react-router-dom';
 
 
-export class shopPages extends Component {
+export class ShopPages extends Component {
   constructor(props) {
    super(props);
    this.state = {
@@ -18,7 +18,7 @@ export class shopPages extends Component {
      evenArray: [],
      oddArray: [],
      cart: [],
-     response: [],
+     change: [],
    }
 
 }
@@ -51,14 +51,9 @@ handleSelectL2 = i => {
    });
 }
 
-async componentDidMount() {
-  const idType = [];
-  const response = await fetch('/products');
-  const json = await response.json();
-  json.forEach(product => { idType.push(JSON.stringify(product.id)) });
-  this.setState({ response: idType });
-  console.log(this.state.response);
 
+componentDidMount() {
+  const urlID =  this.props.location.state.urlId
   const oauth = OAuth({
     consumer: {
       key: 'ck_c7755f9b61466a51acdf48f3a9ac64278cf78945',
@@ -71,14 +66,22 @@ async componentDidMount() {
   });
 
   const request_data1 = {
-    url: "http://localhost:8888/wp-json/wc/v2/products/" + this.state.response[2] + "/variations?per_page=15",
+    url: "http://localhost:8888/wp-json/wc/v2/products/" + urlID + "/variations?per_page=15",
     method: 'GET',
+    headers : {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
   };
 
-  console.log('url', request_data1.url)
+
   const request_data2 = {
-    url: 'http://localhost:8888/wp-json/wc/v2/products/' + this.state.response[2],
+    url: 'http://localhost:8888/wp-json/wc/v2/products/' + urlID,
     method: 'GET',
+    headers : {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+     }
   };
 
   fetch(request_data1.url, {
@@ -122,8 +125,8 @@ console.log(this.state.showMenu)
 render() {
   const regex = /(<([^>]+)>)/ig;
   const name = this.state.products2.description && this.state.products2.description.replace(regex, '');
-  return(
 
+  return(
 <div>
       <div className="sPagesContainerBody">
         <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} cart={this.state.cart} ></Header>
@@ -144,4 +147,4 @@ render() {
 }
 
 
-export default shopPages;
+export default ShopPages;

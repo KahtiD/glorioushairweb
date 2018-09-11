@@ -22,7 +22,6 @@ export class shopLanding extends Component {
   }
 
 menuShow = () => {
-console.log(this.state.showMenu)
   this.setState({
     showMenu : !this.state.showMenu
   });
@@ -31,9 +30,14 @@ console.log(this.state.showMenu)
 async componentDidMount() {
   const response = await fetch('/products');
   const json = await response.json();
+  console.log('htmlJson', json);
   this.setState({
     data: json,
   })
+  if (this.state.data.length === 0 ) {
+    console.log('waiting');
+  }
+
   this.state.data.forEach((product, i) => {
     product.description === '<p>Brazilian</p>\n' && this.state.brazilianHair.push(product);
     product.description === '<p>Peruvian</p>\n' && this.state.peruvianHair.push(product);
@@ -47,6 +51,7 @@ async componentDidMount() {
   })
   this.state.texture.push(this.state.brazilianHair, this.state.peruvianHair, this.state.malaysianHair);
   this.state.pattern.push(this.state.straight, this.state.curly, this.state.wavy);
+
 }
 
 

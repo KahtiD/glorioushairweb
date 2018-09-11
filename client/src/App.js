@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Routes from './routes';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {Home, ContactForm, shopLanding, ShopPages } from './containers';
 
 export class App extends Component {
   constructor(props) {
@@ -10,11 +11,10 @@ export class App extends Component {
    }
  }
 
-  componentDidMount(){
+  async componentDidMount(){
    const loadingPage = document.getElementById('loadingPage')
    if (loadingPage) {
      setTimeout(() => {
-       loadingPage
        setTimeout(() => {
          loadingPage.outerHTML = ''
        }, 1000)
@@ -24,12 +24,17 @@ export class App extends Component {
 
 
 
-
-
-
 render() {
   return(
-    <Routes></Routes>
+    <BrowserRouter>
+      <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/contactus" exact component={ContactForm}/>
+          <Route path="/shop" exact component={shopLanding}/>
+          <Route path="/product-page/"  component={ShopPages}/>)
+
+      </Switch>
+    </BrowserRouter>
   )
 }
 }

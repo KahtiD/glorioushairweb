@@ -52,12 +52,14 @@
   height: 329.8px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
   margin-bottom: 143px;
+  background-size: cover;
 }
 
 .mbottomCanvas {
   width: 350.3px;
   height: 329.8px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.24);
+  background-size: cover;
 }
 
 .mmiddleCanvas {
@@ -65,4 +67,5 @@
   height: 396.17px;
   margin: 0 auto;
   box-shadow: 0px 5px 54px 0px rgba(103, 18, 124, 0.5);
+  background-size: cover;
 }

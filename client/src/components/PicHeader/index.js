@@ -39,7 +39,6 @@ handleHover = () => {
       window.removeEventListener("scroll", this.handleHover);
     }
   render() {
-    console.log(this.state.hide);
     return(
       <div onScroll={this.handleHover.bind(this)}>
         { this.state.hide &&

@@ -14,6 +14,9 @@ const WooCommerce = new WooCommerceAPI({
   version: 'wc/v2' // WooCommerce WP REST API version
 });
 
+app.get('/', function(req, res){
+    res.sendFile(__dirname+'/client/public/index.html'); // change the path to your index.html
+});
 
 let response;
 app.get('/products', (req, res, err) => {
@@ -22,10 +25,6 @@ app.get('/products', (req, res, err) => {
   });
   res.status(200).json(JSON.parse(response));
 });
-
-
-
-
 
 
 

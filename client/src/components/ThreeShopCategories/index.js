@@ -71,7 +71,8 @@ handleClick3 = () => {
           <div>
           {left.map( (item, i) => {
             return (<SLSections key={item.id} type={left[i] && left[i].name}
-                                route="/loosewave" image={left[i] && left[i].images[0].src}></SLSections>)
+                                slug={left[i].slug} image={left[i] && left[i].images[0].src}
+                                idNumber={left[i].id}/>)
           })}
           </div>
         }
@@ -80,7 +81,8 @@ handleClick3 = () => {
           <div>
           {center.map( (item, i) => {
             return (<SLSections key={item.id} type={center[i] && center[i].name}
-                                route="/loosewave" image={center[i] && center[i].images[0].src}></SLSections>)
+                                slug={center[i].slug} image={center[i] && center[i].images[0].src}
+                                idNumber={center[i].id}/>)
           })}
           </div>
         }
@@ -88,7 +90,8 @@ handleClick3 = () => {
           <div>
           {right.map( (item, i) => {
             return (<SLSections key={item.id} type={right[i] && right[i].name}
-                                route="/loosewave" image={right[i] && right[i].images[0].src}></SLSections>)
+                                slug={right[i].slug} image={right[i] && right[i].images[0].src}
+                                idNumber={right[i].id}/>)
           })}
           </div>
         }
