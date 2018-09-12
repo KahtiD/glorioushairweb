@@ -23,7 +23,6 @@ handleClick1 = () => {
 }
 
 handleClick2 = () => {
-  console.log(this.state.tabPressed2);
   this.setState({
     tabPressed2 : !this.state.tabPressed2,
     tabPressed1: false,
