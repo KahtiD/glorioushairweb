@@ -17,6 +17,9 @@ render() {
     <div className={this.props.shoMenu ? "iconsMoved ": "icons"}>
       <img src={MenuIcon} onClick={this.props.movBody} className="MenuIcon" alt="icon1" />
       <img src={BasketIcon} className="BasketIcon" alt="icon2" />
+      {this.props.cart && this.props.cart.length > 0  &&
+      <div className="cartList"><p className="numbers">{this.props.cart.length}</p></div>
+    }
     </div>
 
 

@@ -13,13 +13,21 @@ render() {
   <div>
     <div className="sectionsContainer">
     <div style={{width: '710px', height: '100%', margin: '0 auto'}}>
-    <div className="picCanvas">
+    <div className="picCanvas" style={{backgroundImage: `url(${this.props.image})`}}>
     </div>
     <div className="contentCanvas">
-      <div className="titleBox"><Link to={this.props.route}><h1 className="typeTitle">{this.props.type}</h1></Link></div>
-      <h1 className="itemText">Bundles</h1>
-      <h1 className="itemText">Lace</h1>
-      <h1 className="itemText">Bundles + Lace</h1>
+      <div className="titleBox">
+      <Link to={{ pathname: `/product-page/${this.props.slug}/${this.props.idNumber}`,
+                  state: {
+                    urlId: this.props.idNumber
+                  }
+                }}>
+      <h1 className="typeTitle">{this.props.type}</h1>
+      </Link>
+    </div>
+    <h1 className="itemText">Bundles</h1>
+    <h1 className="itemText">Lace</h1>
+    <h1 className="itemText">Bundles + Lace</h1>
     </div>
     </div>
     </div>

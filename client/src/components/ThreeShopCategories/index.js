@@ -10,8 +10,8 @@ export class ThreeSC extends Component {
       tabPressed1 : false,
       tabPressed2 : false,
       tabPressed3 : false,
-      showPressed : false
-   }
+      showPressed : false,
+    }
   }
 
 handleClick1 = () => {
@@ -23,7 +23,6 @@ handleClick1 = () => {
 }
 
 handleClick2 = () => {
-  console.log(this.state.tabPressed2);
   this.setState({
     tabPressed2 : !this.state.tabPressed2,
     tabPressed1: false,
@@ -39,7 +38,9 @@ handleClick3 = () => {
   });
 }
 
+
   render() {
+    const { left, center, right} = this.props;
     return (
       <div>
       <div className="landingContainerBody">
@@ -64,19 +65,33 @@ handleClick3 = () => {
           </div>
         </div>
 
+
         {this.state.tabPressed1 &&
           <div>
-            <SLSections type="Brazilian" route="/loosewave"></SLSections>
+          {left.map( (item, i) => {
+            return (<SLSections key={item.id} type={left[i] && left[i].name}
+                                slug={left[i].slug} image={left[i] && left[i].images[0].src}
+                                idNumber={left[i].id}/>)
+          })}
           </div>
         }
+
         {this.state.tabPressed2 &&
           <div>
-            <SLSections type="Kinky Curly" route="/loosewave"></SLSections>
+          {center.map( (item, i) => {
+            return (<SLSections key={item.id} type={center[i] && center[i].name}
+                                slug={center[i].slug} image={center[i] && center[i].images[0].src}
+                                idNumber={center[i].id}/>)
+          })}
           </div>
         }
         {this.state.tabPressed3 &&
           <div>
-            <SLSections type="Loose Wave" route="/loosewave"></SLSections>
+          {right.map( (item, i) => {
+            return (<SLSections key={item.id} type={right[i] && right[i].name}
+                                slug={right[i].slug} image={right[i] && right[i].images[0].src}
+                                idNumber={right[i].id}/>)
+          })}
           </div>
         }
       </div>
