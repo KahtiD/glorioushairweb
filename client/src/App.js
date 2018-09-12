@@ -31,7 +31,7 @@ render() {
           <Route path="/" exact component={Home}/>
           <Route path="/contactus" exact component={ContactForm}/>
           <Route path="/shop" exact component={shopLanding}/>
-          <Route path="/product-page/"  component={ShopPages}/>)
+          <Route path="/product-page/:slug/:idNumber" exact component={ShopPages}/>)
 
       </Switch>
     </BrowserRouter>

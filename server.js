@@ -1,9 +1,10 @@
 const express = require('express');
 const WooCommerceAPI = require('woocommerce-api');
-const toCleanJSON = require('json-stringify-safe');
+const history = require('connect-history-api-fallback');
 const app = express();
 const port = 3001;
 
+app.use(history());
 
 
 const WooCommerce = new WooCommerceAPI({
