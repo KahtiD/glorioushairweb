@@ -10,10 +10,28 @@ export class ReviewsShopPage extends Component {
    super(props);
 
    this.state = {
-
-
+     write: false,
+     name: '',
+     review: '',
+     email: '',
+     rating: 0,
    }
  }
+
+ writeReview() {
+   this.setState({
+     write: !this.state.write
+   })
+   console.log(this.state.write)
+ }
+
+textEntry() {
+
+}
+
+handleHover() {
+  
+}
 
 render() {
 
@@ -27,8 +45,9 @@ render() {
             <img src={fiveStars} alt="fiveStars" height="100%" width="100%"></img>
           </div>
           <p style={{color: '#281560', fontSize: "15.3px"}}>Based on {this.props.reviewsNumber}</p>
-          <p style={{color: '#727272', fontSize: "15.3px"}}>Write a review</p>
+          <p onClick={this.writeReview.bind(this)} style={{color: '#727272', fontSize: "15.3px",  cursor: "pointer"}}>Write a review</p>
         </div>
+
         <div className="recentReview">
           <h1 className="recentTitle">AMAZING QUALITY</h1>
           <div style={{width: '241.2px', height: '42.3px', margin: '0 auto' }}>
@@ -39,6 +58,23 @@ render() {
         </div>
       </div>
     </div>
+
+    {this.state.write &&
+    <div className="writeReviewBox">
+      <form style={{width: '100%', height: '100%'}}>
+        <textarea className="entry" name="name" placeholder="Name" value={this.state.name} ></textarea>
+        <textarea className="entry" name="email" placeholder="Email" value={this.state.email} ></textarea>
+        <textarea className="entry" name="review" placeholder="Please give your feedback" value={this.state.review} ></textarea>
+        <div className="starRating">
+          <div className="star 1"></div>
+          <div className="star 2"></div>
+          <div className="star 3"></div>
+          <div className="star 4"></div>
+          <div className="star 5"></div>
+        </div>
+      </form>
+    </div>}
+
 
   </div>
 

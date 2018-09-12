@@ -16,3 +16,27 @@
   color: #727272;
   padding-top: 27px;
 }
+
+.writeReviewBox{
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  background-color: rgb(192,192,192, 0.3);
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  background-color: purple;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.star:hover {
+  background-color: blue;
+}
+
+.entry{
+  display: block;
+  resize: none;
+}

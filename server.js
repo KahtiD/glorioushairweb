@@ -1,8 +1,8 @@
 const express = require('express');
 const WooCommerceAPI = require('woocommerce-api');
-var stringify = require('json-stringify-safe');
+const toCleanJSON = require('json-stringify-safe');
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 
 
@@ -14,16 +14,17 @@ const WooCommerce = new WooCommerceAPI({
   version: 'wc/v2' // WooCommerce WP REST API version
 });
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname+'/client/public/index.html'); // change the path to your index.html
-});
 
 let response;
-app.get('/products', (req, res, err) => {
   WooCommerce.get('products', function(err, data, res) {
     response = res;
-  });
-  res.status(200).json(JSON.parse(response));
+    app.get('/products', (req, res, err) => {
+      if (res.status(200)) {
+      res.status(200).json(JSON.parse(response));
+    } else {
+      console.log('theres an error', err);
+    }
+  })
 });
 
 

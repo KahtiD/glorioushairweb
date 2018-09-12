@@ -29,14 +29,10 @@ menuShow = () => {
 
 async componentDidMount() {
   const response = await fetch('/products');
-  const json = await response.json();
-  console.log('htmlJson', json);
-  this.setState({
-    data: json,
-  })
-  if (this.state.data.length === 0 ) {
-    console.log('waiting');
-  }
+  const json =  await response.json()
+    this.setState({
+      data: json,
+    });
 
   this.state.data.forEach((product, i) => {
     product.description === '<p>Brazilian</p>\n' && this.state.brazilianHair.push(product);
@@ -56,7 +52,7 @@ async componentDidMount() {
 
 
 render() {
-  return(
+  return (
     <div>
       <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu}></Header>
 
