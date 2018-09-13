@@ -1,10 +1,15 @@
 const express = require('express');
 const WooCommerceAPI = require('woocommerce-api');
 const history = require('connect-history-api-fallback');
+const bodyParser = require('body-parser')
 const app = express();
 const port = 3001;
 
+// const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(history());
+app.use(bodyParser.json());
+
+// const jsonParser = bodyParser.json()
 
 
 const WooCommerce = new WooCommerceAPI({
@@ -17,7 +22,7 @@ const WooCommerce = new WooCommerceAPI({
 
 
 let response;
-  WooCommerce.get('products', function(err, data, res) {
+  WooCommerce.get('products', (err, data, res) => {
     response = res;
     app.get('/products', (req, res, err) => {
       if (res.status(200)) {
@@ -28,6 +33,9 @@ let response;
   })
 });
 
+app.post('/contactUs', (req, res) => {
+  console.log(req.body);
+})
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

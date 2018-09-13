@@ -5,27 +5,23 @@ import {Footer, Header} from '../../components';
 
 
 
+
 export class ContactForm extends Component {
   constructor(props) {
    super(props);
 
    this.state = {
-      userName : '',
-      email: '',
-      subject: '',
-      message: '',
-      userNameError : false,
-      emailError: false,
-      subjectError: false,
-      messageError: false,
-      errorWords: '',
-      formSubmit: false,
-      formValid: false,
+     formFields: {name: '', email: '', subject: '', message: '' },
+      fileValue: '',
+      fileName: '',
+      nameError : false, emailError: false, subjectError: false, messageError: false, errorWords: '',
+      formSubmit: false, formValid: false,
       successCover: '',
       showMenu : false,
    };
    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+}
+
 
 menuShow = () => {
 console.log(this.state.showMenu)
@@ -34,205 +30,165 @@ console.log(this.state.showMenu)
   });
 }
 
-handleChange = (e) => {
+handleChange(e) {
+  let formFields = {...this.state.formFields};
+      formFields[e.target.name] = e.target.value;
     this.setState({
-      [e.target.name]: e.target.value,
+      formFields
     });
   };
 
-validateForm = () => {
+  handleFormClear = (e) => {
+  e.preventDefault();
+  this.setState({
+    formFields: { name: '', email: '', subject: '', message: '' },
+    fileValue: '',
+    fileName: '',
+    nameError : false, emailError: false, subjectError: false, messageError: false,
+    formSubmit: false,
+    errorStatement: '',
+  });
+}
 
-  let isError = false;
+sendFormOff() {
+  fetch('/contactUs', {
+    method: 'POST',
+    body: {
+      name: this.state.formFields.name,
+      email: this.state.formFields.email,
+      subject: this.state.formFields.subject,
+      message: this.state.formFields.message,
+      // fileValue: this.state.fileValue
+    },
+  }).then(res => console.log(res))
+  .catch(error => console.error('Error:', error))
+.then(res => console.log('Success:', res));
+}
 
-  const errors = {};
+handleFiles = (e) => {
+if (window.FileReader) {
+  let reader = new FileReader();
+  let file = e.target.files[0];
+  let fileName = file.name;
+  // let files = reader.readAsDataURL(file);
+  let fileSize = file.size > 5e+7;
 
-  if (this.state.userName.length < 2) {
-      isError = true;
-      console.log(isError);
-  }
-
-  if (this.state.email.indexOf("@") === -1) {
-    isError = true;
-    console.log(isError);
-  }
-
-  if (this.state.subject.length < 2) {
-      isError = true;
-      console.log(isError);
-    }
-
-  if (this.state.message.length < 2) {
-      isError = true;
-      console.log(isError);
-   }
-
-    this.setState({
-      ...this.state,
-      ...errors
-    });
-
-  return isError;
-
-};
-
-handleSubmit(e) {
-
-      e.preventDefault();
-
-      const err = this.validateForm();
-      if (err) {
-
-        if (this.state.userName.length < 2) {
-          this.setState({
-             userNameError: true,
-          });
-        }
-
-        if (this.state.email.indexOf("@") === -1) {
-          this.setState({
-             emailError: true,
-          });
-        }
-
-
-        if (this.state.subject.length < 2) {
-          this.setState({
-             subjectError: true,
-          });
-          }
-
-         if (this.state.message.length < 2) {
-           this.setState({
-              messageError: true,
-           });
-          }
-      }
-
-      if (!err) {
-
-      const finalForm = {
-        userName: this.state.userName,
-        email: this.state.email,
-        subject: this.state.subject,
-        message: this.state.message,
-      };
-      console.log(finalForm);
-
-      if (this.state.imagePreviewUrl) {
-
-        let newFileName = this.state.fileName.replace(/^C:\\fakepath\\/, "");
-
-        finalForm.attachments = [{
-          filename: newFileName,
-          content: this.state.imagePreviewUrl.split("base64,")[1],
-          encoding: 'base64',
-        }]
-     }
-
-      this.handleFormClear(e);
+  if (fileSize) {
       this.setState({
-        formSubmit: true,
-      });
-    }
-  }
-
-
-
-    handleFormClear = (e) => {
-    e.preventDefault();
+        errorStatement: 'Error - File size too big',
+        formSubmit: false,
+    });
+  } else {
     this.setState({
-      userName: '',
-      email: '',
-      subject: '',
-      message: '',
-      showFilename: '',
-      userNameError : false,
-      emailError: false,
-      subjectError: false,
-      messageError: false,
-      formSubmit: false
+      fileName: fileName,
+      fileValue: e.target.value
     });
   }
+  console.log('files', reader);
 
-
-  handleFiles = (e) => {
-
-      let reader = new FileReader();
-      let fileName = e.target.value;
-      let file = e.target.files[0];
-      let newFileName = fileName.replace(/^C:\\fakepath\\/, "");
-
-      if (newFileName.length > 18) {
-        let last15chars = newFileName.substring(newFileName.length-15, newFileName.length);
-        let first8chars = newFileName.substring(0, 8);
-        newFileName = first8chars + "..." + last15chars
-      }
-
-      let fileSize = e.target.files[0].size > 5e+7;
-
-      if (fileSize) {
-        this.setState({
-          errorStatement: 'Error - File size too big'
-        });
-      } else {
-
-        reader.onloadend = () => {
-
-          this.setState({
-            file: file,
-            fileName: fileName,
-            newFileName: newFileName,
-            imagePreviewUrl: reader.result,
-            errorStatement: false
-          });
-        }
-
-        reader.readAsDataURL(file)
-      }
-    }
+  // else  {
+  //     this.setState( prevState => ({
+  //       files: [...prevState.files, ...files]
+  //     })
+  //   }
+  // console.log('files', files);
+  // console.log('file', file);
+  // console.log('e.target', e.target.value);
+  }
+  }
 
 handleWrongfile = (e) => {
-  let showFilename = '';
-  this.setState({newFileName: showFilename});
   this.setState({
-      showFilename: ''
+      fileValue: '',
+      fileName: '',
   });
 }
 
 handleHidemessage = (e) => {
-  let showFilename = '';
-  this.setState({newFileName: showFilename});
   this.setState({
     formSubmit: false,
-    showFilename: ''
   });
 }
 
+handleSubmit(e) {
+      e.preventDefault();
+      let isError = false;
+        if (this.state.formFields.name.length < 2) {
+          this.setState({ nameError: true });
+          isError = true;
+        }
+        if (this.state.formFields.email.indexOf("@") === -1) {
+          this.setState({ emailError: true });
+          isError = true;
+        }
+        if (this.state.formFields.subject.length < 2) {
+          this.setState({ subjectError: true });
+          isError = true;
+        }
+        if (this.state.formFields.message.length < 2) {
+         this.setState({ messageError: true });
+         isError = true;
+        }
+      if (!isError) {
+        this.handleFormClear(e);
+        this.setState({ formSubmit: true });
+        fetch('/contactUs', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: this.state.formFields.name,
+            email: this.state.formFields.email,
+            subject: this.state.formFields.subject,
+            message: this.state.formFields.message,
+            // fileValue: this.state.fileValue
+          }),
+        }).then((response) => console.log(response))
+        console.log('data', this.state.formFields);
+        console.log('show',) ;
+     }
+}
+
+
+
 
 render() {
-
+  // console.log('form status', this.state.formSubmit);
+  // console.log('file value', this.state.fileValue);
+  // console.log('file name', this.state.fileName);
+  // console.log('name', this.state.userName);
+  // console.log('email', this.state.email);
+  // console.log('subject', this.state.subject);
+  // console.log('message', this.state.message);
   return(
-
   <div>
     <div className="body">
       <Header moveBody={this.menuShow.bind(this)} showMenu={this.state.showMenu} ></Header>
       <div className="containerBody">
-      {!this.state.formSubmit ?
+      {this.state.formSubmit === false ?
           <div className="formContainer">
           <div className="form">
             <div className="errorArea">
               <h1 className="cTitle">Contact Us</h1>
-              {this.state.emailError &&
-              <p className="errorText">Please make sure your fields and <br/> email address are valid.</p> }
+              {this.state.emailError || this.state.messageError ?
+              <p className="errorText">Please make sure your fields and <br/> email address are valid.</p> : null}
             </div>
-           <form onSubmit={e => this.handleSubmit(e)}>
-             <textarea className={this.state.userNameError ? "errorStyle" : "name"} name="userName" placeholder="Name" value={this.state.userName} onChange={e => this.handleChange(e)} required></textarea>
-             <textarea className={this.state.emailError ? "errorStyle" : "email"} name="email" placeholder="Email" value={this.state.email} onChange={e => this.handleChange(e)} required></textarea>
-             <textarea className={this.state.subjectError ? "errorStyle" : "subject"} name="subject" placeholder="Subject" value={this.state.subject} onChange={e => this.handleChange(e)} required></textarea>
-             <textarea className={this.state.messageError ? "errorStyle2" : "message"} name="message" placeholder="Message" value={this.state.message} onChange={e => this.handleChange(e)} required></textarea>
+           <form onSubmit={e => this.handleSubmit(e)} >
+             <textarea className={this.state.nameError ? "errorStyle" : "name"} name="name" placeholder="Name" value={this.state.formFields.name} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
+             <textarea className={this.state.emailError ? "errorStyle" : "email"} name="email" placeholder="Email" value={this.state.formFields.email} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
+             <textarea className={this.state.subjectError ? "errorStyle" : "subject"} name="subject" placeholder="Subject" value={this.state.formFields.subject} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
+             <textarea className={this.state.messageError ? "error" : "message"} name="message" placeholder="Message" value={this.state.formFields.message} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
              <div className="uploadArea">
                <p className="caption">Attach Inspo Picture:</p>
-               <input style={{display: "inline-block"}} type="file" name="upload" value={this.state.newFileName} onChange={this.handleFiles}></input>
+               <div className="uploadThings">
+                 <button className="uploadButton">Upload</button>
+                 <p className="fileName">{this.state.fileName}</p>
+                 {this.state.fileName && <button className="removeFile" onClick={this.handleWrongfile}>X</button>}
+               </div>
+               <input type="file" name="upload" value={this.state.fileValue} onChange={this.handleFiles}></input>
+               {this.state.errorStatement  && <p className="errorText2">{this.state.errorStatement}</p>}
              </div>
              <input type="submit" className="contactSubmit" value="Send" ></input>
            </form>
