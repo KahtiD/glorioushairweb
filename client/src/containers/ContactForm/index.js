@@ -12,7 +12,7 @@ export class ContactForm extends Component {
 
    this.state = {
      formFields: {name: '', email: '', subject: '', message: '' },
-      fileValue: '',
+      fileValue: null,
       fileName: '',
       nameError : false, emailError: false, subjectError: false, messageError: false, errorWords: '',
       formSubmit: false, formValid: false,
@@ -42,7 +42,6 @@ handleChange(e) {
   e.preventDefault();
   this.setState({
     formFields: { name: '', email: '', subject: '', message: '' },
-    fileValue: '',
     fileName: '',
     nameError : false, emailError: false, subjectError: false, messageError: false,
     formSubmit: false,
@@ -51,55 +50,37 @@ handleChange(e) {
 }
 
 sendFormOff() {
+  const data = new FormData();
+  data.append('file', this.state.fileValue );
+  data.append('name', this.state.formFields.name);
+  data.append('email', this.state.formFields.email);
+  data.append('subject', this.state.formFields.subject);
+  data.append('message', this.state.formFields.message);
   fetch('/contactUs', {
     method: 'POST',
-    body: {
-      name: this.state.formFields.name,
-      email: this.state.formFields.email,
-      subject: this.state.formFields.subject,
-      message: this.state.formFields.message,
-      // fileValue: this.state.fileValue
-    },
-  }).then(res => console.log(res))
-  .catch(error => console.error('Error:', error))
-.then(res => console.log('Success:', res));
+    body: data,
+  }).then((response) => console.log(response))
 }
 
 handleFiles = (e) => {
 if (window.FileReader) {
-  let reader = new FileReader();
-  let file = e.target.files[0];
-  let fileName = file.name;
-  // let files = reader.readAsDataURL(file);
-  let fileSize = file.size > 5e+7;
-
-  if (fileSize) {
+//check if it works
+  if (e.target.files[0].size > 5e+7) {
       this.setState({
         errorStatement: 'Error - File size too big',
         formSubmit: false,
     });
   } else {
     this.setState({
-      fileName: fileName,
-      fileValue: e.target.value
+      fileName: e.target.files[0].name,
+      fileValue: e.target.files[0],
     });
-  }
-  console.log('files', reader);
-
-  // else  {
-  //     this.setState( prevState => ({
-  //       files: [...prevState.files, ...files]
-  //     })
-  //   }
-  // console.log('files', files);
-  // console.log('file', file);
-  // console.log('e.target', e.target.value);
-  }
-  }
+   }
+ }
+}
 
 handleWrongfile = (e) => {
   this.setState({
-      fileValue: '',
       fileName: '',
   });
 }
@@ -132,36 +113,11 @@ handleSubmit(e) {
       if (!isError) {
         this.handleFormClear(e);
         this.setState({ formSubmit: true });
-        fetch('/contactUs', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: this.state.formFields.name,
-            email: this.state.formFields.email,
-            subject: this.state.formFields.subject,
-            message: this.state.formFields.message,
-            // fileValue: this.state.fileValue
-          }),
-        }).then((response) => console.log(response))
-        console.log('data', this.state.formFields);
-        console.log('show',) ;
+        this.sendFormOff();
      }
 }
 
-
-
-
 render() {
-  // console.log('form status', this.state.formSubmit);
-  // console.log('file value', this.state.fileValue);
-  // console.log('file name', this.state.fileName);
-  // console.log('name', this.state.userName);
-  // console.log('email', this.state.email);
-  // console.log('subject', this.state.subject);
-  // console.log('message', this.state.message);
   return(
   <div>
     <div className="body">
@@ -175,7 +131,7 @@ render() {
               {this.state.emailError || this.state.messageError ?
               <p className="errorText">Please make sure your fields and <br/> email address are valid.</p> : null}
             </div>
-           <form onSubmit={e => this.handleSubmit(e)} >
+           <form onSubmit={e => this.handleSubmit(e)} encType='multipart/form-data'>
              <textarea className={this.state.nameError ? "errorStyle" : "name"} name="name" placeholder="Name" value={this.state.formFields.name} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
              <textarea className={this.state.emailError ? "errorStyle" : "email"} name="email" placeholder="Email" value={this.state.formFields.email} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
              <textarea className={this.state.subjectError ? "errorStyle" : "subject"} name="subject" placeholder="Subject" value={this.state.formFields.subject} onChange={(e) => this.handleChange.call(this, e)} required></textarea>
@@ -187,7 +143,7 @@ render() {
                  <p className="fileName">{this.state.fileName}</p>
                  {this.state.fileName && <button className="removeFile" onClick={this.handleWrongfile}>X</button>}
                </div>
-               <input type="file" name="upload" value={this.state.fileValue} onChange={this.handleFiles}></input>
+               <input type="file" name="upload" onChange={this.handleFiles} />
                {this.state.errorStatement  && <p className="errorText2">{this.state.errorStatement}</p>}
              </div>
              <input type="submit" className="contactSubmit" value="Send" ></input>
@@ -196,6 +152,7 @@ render() {
         </div>
 
         :
+        
         <div className="submitcover">
               <div style={{width: "100%", height: "35px"}}>
               <button style={{width: "50px", height: "50px", background: "none", border: "none", fontSize: "20px", float: "right"}} onClick={this.handleHidemessage}>X</button>

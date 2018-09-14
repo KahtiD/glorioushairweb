@@ -1,5 +1,25 @@
 // odd function etc etc
 
+// console.log('files', reader);
+
+// else  {
+//     this.setState( prevState => ({
+//       files: [...prevState.files, ...files]
+//     })
+//   }
+// console.log('files', files);
+// console.log('file', file);
+// console.log('e.target', e.target.value);
+}
+
+body: JSON.stringify({
+  name: this.state.formFields.name,
+  email: this.state.formFields.email,
+  subject: this.state.formFields.subject,
+  message: this.state.formFields.message,
+  fileValue: data,
+}),
+
 onSubmit={e => this.handleSubmit(e)}
 
 validateForm = () => {
