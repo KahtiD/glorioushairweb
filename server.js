@@ -3,17 +3,14 @@ const WooCommerceAPI = require('woocommerce-api');
 const history = require('connect-history-api-fallback');
 const bodyParser = require('body-parser');
 const multer  = require('multer');
+const fs = require('fs-extra')
 const nodemailer = require('nodemailer');
 
 const upload = multer({ dest: 'uploads/' });
 const app = express();
 const port = 3001;
 
-// const urlencodedParser = bodyParser.urlencoded({ extended: false })
-app.use(history());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// const jsonParser = bodyParser.json()
+app.use(express.static('/client/public'));
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -54,8 +51,20 @@ app.post('/contactUs', upload.single('file'), (req, res) => {
   <h2>About: ${req.body.subject}</h2>
   <h2>Sent from: ${req.body.name}</h2>
   <p>Message: ${req.body.message}</p>
-  <p>Attachement: ${req.file}</p>
   `
+  function attachments() {
+    if(req.file === undefined) {
+      return {
+        filename: '',
+        path: '',
+      };
+    } else {
+      return {
+        filename: req.file.originalname,
+        path: req.file.path,
+      }
+    }
+  }
 
   console.log(req.body);
   console.log(req.file);
@@ -65,10 +74,7 @@ app.post('/contactUs', upload.single('file'), (req, res) => {
           subject: req.body.subject,
           text: 'Hello world?',
           html: emailOutput,
-          attachments: {
-            filename: req.file.originalname,
-            path: req.file.path,
-          }
+          attachments: attachments()
       };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -78,8 +84,14 @@ app.post('/contactUs', upload.single('file'), (req, res) => {
           console.log('Message sent: %s', info.messageId);
           console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-          // res.render('', )
+          if(!error) {
+            fs.emptyDir('uploads', err => {
+            if (err) return console.error(err)
+            console.log('Uploads folder emptied, success!')
+          })
+        }
     });
+
 
 })
 

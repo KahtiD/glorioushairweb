@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ContactForm.css';
 import {Footer, Header} from '../../components';
-
+// import axios from 'axios';
 
 
 
@@ -43,6 +43,7 @@ handleChange(e) {
   this.setState({
     formFields: { name: '', email: '', subject: '', message: '' },
     fileName: '',
+    fileValue: null,
     nameError : false, emailError: false, subjectError: false, messageError: false,
     formSubmit: false,
     errorStatement: '',
@@ -56,10 +57,15 @@ sendFormOff() {
   data.append('email', this.state.formFields.email);
   data.append('subject', this.state.formFields.subject);
   data.append('message', this.state.formFields.message);
+
   fetch('/contactUs', {
     method: 'POST',
     body: data,
-  }).then((response) => console.log(response))
+  }).then((response) => {
+          console.log('ResponseLog', response)
+          // this.setState({formSubmit: true})
+  })
+  .catch((err) => {console.log('Error', err)} )
 }
 
 handleFiles = (e) => {
@@ -152,7 +158,7 @@ render() {
         </div>
 
         :
-        
+
         <div className="submitcover">
               <div style={{width: "100%", height: "35px"}}>
               <button style={{width: "50px", height: "50px", background: "none", border: "none", fontSize: "20px", float: "right"}} onClick={this.handleHidemessage}>X</button>
